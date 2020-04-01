@@ -27,41 +27,16 @@ end
 
  puts "generating users"
 
-avatar1 = URI.open('https://avatars3.githubusercontent.com/u/58790438?v=4')
 avatar2 = URI.open('https://avatars0.githubusercontent.com/u/28073539?v=4')
-avatar3 = URI.open('https://avatars1.githubusercontent.com/u/59839816?v=4')
-avatar4 = URI.open('https://i0.wp.com/www.lechotouristique.com/wp-content/uploads/2018/02/alix-gauthier.jpg?resize=300%2C300&ssl=1')
-user1 = User.create({
-  username: 'Jerome',
-  email: 'jerome.crest@gmail.com',
-  password: 'password',
-  admin: true,
-})
-user1.avatar.attach(io: avatar1, filename: 'jerome.jpeg', content_type: 'image/jpeg')
+
 
 user2 = User.create({
   username: 'Gaetan',
   email: 'malletgaetantmp@gmail.com',
-  password: 'password',
+  password: 'thisismyrealpassword123',
   admin: true,
 })
 user2.avatar.attach(io: avatar2, filename: 'gaetan.jpeg', content_type: 'image/jpeg')
-
-user3 = User.create({
-  username: 'Tib',
-  email: 'thibault.adet@gmail.com',
-  password: 'password',
-  admin: true,
-})
-user3.avatar.attach(io: avatar3, filename: 'tib.jpeg', content_type: 'image/jpeg')
-
-user4 = User.create({
-  username: 'Alix',
-  email: 'gauthieralix@gmail.com',
-  password: 'password',
-  admin: true,
-})
-user4.avatar.attach(io: avatar4, filename: 'alix.jpeg', content_type: 'image/jpeg')
 
 puts "users generated!"
 
@@ -290,14 +265,5 @@ apply_slope(itinerary6_slopes, itinerary6.id)
 itinerary7_slopes = [3.9213428,3.5900285,3.162699,17.260191,5.800056,12.699117,3.9895163,5.4326758,5.4390712,5.4390712,5.4390712,13.228942,12.634144,24.150038,26.002989,28.203821,28.360666,29.864391,25.478226,28.907791,23.472923,15.422167,13.450074,17.186785,12.743846,8.0686283,14.934354,25.893196,26.432123,29.124346,27.208391,19.404894,27.581728,41.035278,41.219372,41.219372,33.695465,25.902338,23.816357,20.85236,10.525928,12.663377,8.036747,7.7544956,8.4154015,7.8597827,8.433589,7.8947625,7.9555321,8.2526121,11.000242,9.1858397,6.0378318,6.0378318,11.12506,12.475353,18.507874,21.794243,21.855476,5.6449409,8.8204165,20.755924,27.057924,29.739191,27.207676,27.869137,30.65435,32.191887,27.780405,24.383465,18.537256,5.4239826,1.5106587,6.9107327,21.569952,23.058531,25.38624,18.761257,22.000319,17.128727,24.807188,22.847691,22.669436,21.79101,24.344315,21.649523,21.649523,23.712481,21.174028,23.922281,23.165703,23.847456,25.125694,26.21101,24.482052,25.902571,4.1315451,1.8617367,15.474222,1.8617367,4.1315451,4.1315451,25.720362,23.548164,25.694342,23.612236,24.718462,1.5106587,16.49231,12.518559,9.5543146,29.353022,28.053043,28.053043,29.729284,20.384285,20.384285,15.678869,6.9292526,14.880026,25.980391,25.814163,30.541971,38.283039,23.947359,21.860146,21.54911,14.799166,12.123278,9.8861732,19.864193,21.804461,26.587999,26.358997,5.0552349,26.710638,21.186544,20.541666,18.852354,7.4007735,21.116806,18.231487,18.432758,30.141283,25.695156,26.204821,25.525478,7.368691,22.20244,14.358152,24.935787,16.092535,8.3418484,23.486254,13.353967,11.788149,10.53076,4.5503173,2.7404621,2.5555148,]
 
 apply_slope(itinerary7_slopes, itinerary7.id)
-
-
-# ItinerarySlopesJobJob.perform_later(itinerary1.id)
-# ItinerarySlopesJobJob.perform_later(itinerary2.id)
-# ItinerarySlopesJobJob.perform_later(itinerary3.id)
-# ItinerarySlopesJobJob.perform_later(itinerary4.id)
-# ItinerarySlopesJobJob.perform_later(itinerary5.id)
-# ItinerarySlopesJobJob.perform_later(itinerary6.id)
-# ItinerarySlopesJobJob.perform_later(itinerary7.id)
 
 # puts "Jobs in queue!"
